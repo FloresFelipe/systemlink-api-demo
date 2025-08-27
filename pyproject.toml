@@ -9,5 +9,6 @@ dependencies = [
     "ipykernel>=6.30.1",
     "matplotlib>=3.10.5",
     "nisystemlink-clients>=2.18.0",
+    "notebook>=7.4.5",
     "scrapbook>=0.5.0",
 ]

@@ -47,13 +47,25 @@ This example notebook is designed to run seamlessly in two environments:
 ## 🛠️ Usage Instructions
 
 1. Clone this repository.
-2. This is a UV compatible repo, so you can set up the virtual environment with a single command:
+2. Create a UV environment,
+   1. If you're in **PyCharm**:
+      1. Open the Settings dialog (**File >> Settings...)**
+      2. Select **Python > Interpreter **
+      3. Click **Add Interpreter >> Add Local Interpreter...**
+      4. In the **Add Python Interpreter** dialog, select:
+         1. **Generate New**
+         2. In **Type:** select `uv`
+         3. In **Base Python:** select the Python version you want to use.
+         4. Click Ok.
+      5. Click Ok to close the Settings dialog
+      6. See that UV is now creating your virtual environment and adding the necessary dependencies to it.
+    2. If you're in **VSCode**, you can create the environment using the following uv command
 
-```bash
-uv sync
-```
+    ```bash
+    uv sync
+    ```
 
-3. Create a an empty file named `.env` in the root directory and add the following variables:
+3. Create an empty file named `.env` in the root directory and add the following variables:
 
 ```env
 SYSTEMLINK_HTTP_URI=<your_systemlink_http_uri>
