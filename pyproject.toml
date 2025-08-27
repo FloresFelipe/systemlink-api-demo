@@ -1,0 +1,13 @@
+[project]
+name = "systemlink-api-demo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "dotenv>=0.9.9",
+    "ipykernel>=6.30.1",
+    "matplotlib>=3.10.5",
+    "nisystemlink-clients>=2.18.0",
+    "scrapbook>=0.5.0",
+]

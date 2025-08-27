@@ -4,12 +4,13 @@
 
 This project connects to **SystemLink** via HTTP using the `nisystemlink-clients` Python API. It demonstrates how to interact with the **TestMonitor**, **File**, and **Product** APIs for failure analysis and visualization.
 
-The Jupyter notebook included in this project is based on the example from the NI SystemLink Enterprise GitHub repository.
+The Jupyter notebook included in this project is based on the example from the [NI SystemLink Enterprise](https://github.com/ni/systemlink-enterprise-examples/blob/main/Script%20Analysis%20Examples/Test%20Data%20Analysis/Failure_Pareto_Result_Analysis.ipynb) GitHub repository. The difference is that in this version we use the new nisystemlink-clients module.
 
 ## 📁 Files Included
 
 - `Failure_Points_Root_Analysis.ipynb` — Jupyter notebook for failure points root analysis.
-- `requirements.txt` — List of required Python dependencies.
+- `uv.lock` — List of required Python dependencies that can be installed using UV.
+- `requirements.txt` - list of required python dependencies if you want to install them using pip.
 
 ## 🧠 Script Overview
 
@@ -39,32 +40,27 @@ This example notebook is designed to run seamlessly in two environments:
 - `python-dotenv`
 - `nisystemlink-clients`
 - `ipykernel`
+- `matplotlib`
+- `scrapbook`
 - A SystemLink API Key
 
 ## 🛠️ Usage Instructions
 
 1. Clone this repository.
-2. Create and activate a virtual environment:
+2. This is a UV compatible repo, so you can set up the virtual environment with a single command:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
+uv sync
 ```
 
-3. Install dependencies with:
-
-```bash
-pip install -r requirements.txt
-```
-
-4. Create a .env file in the root directory with the following variables:
+3. Create a an empty file named `.env` in the root directory and add the following variables:
 
 ```env
 SYSTEMLINK_HTTP_URI=<your_systemlink_http_uri>
 SYSTEMLINK_API_KEY=<your_api_key>
 ```
 
-5. (Optional) If you don't want to use an .env file, you can create a `SystemLink_API_KEY.json`file in the root directore with the following content:
+4. **(Optional)** If you don't want to use an .env file, you can create a `SystemLink_API_KEY.json`file in the root directore with the following content:
 
 ```json
 {
@@ -73,9 +69,12 @@ SYSTEMLINK_API_KEY=<your_api_key>
 }
 ```
 
-6. Collect a group of resultIds from SLE and populate the `result_ids` list variable.
+5. Collect a group of resultIds from SLE and populate the `result_ids` list variable.
 
-7. Run the notebook `Failure_Pareto_Result_Analysis.ipynb` in Jupyter to explore failure analysis using SystemLink APIs.
+6. Run the notebook `Failure_Pareto_Result_Analysis.ipynb` in Jupyter using a the virtual environment kernel. Notice that it will run fine and return valid results.
+   1. Try using debugging tools such as breakpoints, watch variables, etc. They all should work fine.
+
+7. Switch to the SLE pykernel from JupyterHub and run it. It should return the same results.
 
 ## 🔗 References
 
